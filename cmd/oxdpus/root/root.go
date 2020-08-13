@@ -12,11 +12,11 @@
 package root
 
 import (
-	"github.com/sematext/oxdpus/cmd/oxdpus/add"
-	"github.com/sematext/oxdpus/cmd/oxdpus/attach"
-	"github.com/sematext/oxdpus/cmd/oxdpus/detach"
-	"github.com/sematext/oxdpus/cmd/oxdpus/list"
-	"github.com/sematext/oxdpus/cmd/oxdpus/remove"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/add"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/attach"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/detach"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/list"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/remove"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

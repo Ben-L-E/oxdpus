@@ -14,7 +14,7 @@ package list
 import (
 	"strconv"
 	"fmt"
-	"github.com/sematext/oxdpus/pkg/blacklist"
+	"github.com/Ben-L-E/oxdpus/pkg/blacklist"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

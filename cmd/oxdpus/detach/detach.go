@@ -12,7 +12,7 @@
 package detach
 
 import (
-	"github.com/sematext/oxdpus/pkg/xdp"
+	"github.com/Ben-L-E/oxdpus/pkg/xdp"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

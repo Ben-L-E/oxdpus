@@ -16,7 +16,7 @@ import (
 	"errors"
 	"fmt"
 	libbpf "github.com/iovisor/gobpf/elf"
-	"github.com/sematext/oxdpus/pkg/xdp/prog/gen"
+	"github.com/Ben-L-E/oxdpus/pkg/xdp/prog/gen"
 	"net"
 )
 

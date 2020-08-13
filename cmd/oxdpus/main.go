@@ -12,7 +12,7 @@
 package main
 
 import (
-	"github.com/sematext/oxdpus/cmd/oxdpus/root"
+	"github.com/Ben-L-E/oxdpus/cmd/oxdpus/root"
 )
 
 func main() {

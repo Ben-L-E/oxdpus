@@ -1,4 +1,4 @@
-module github.com/sematext/oxdpus
+module github.com/Ben-L-E/oxdpus
 
 go 1.14
 

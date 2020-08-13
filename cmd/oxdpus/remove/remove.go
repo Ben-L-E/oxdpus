@@ -12,8 +12,8 @@
 package remove
 
 import (
-	"github.com/sematext/oxdpus/pkg/blacklist"
-	"github.com/sematext/oxdpus/pkg/iprange"
+	"github.com/Ben-L-E/oxdpus/pkg/blacklist"
+	"github.com/Ben-L-E/oxdpus/pkg/iprange"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"net"
