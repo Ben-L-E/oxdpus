@@ -12,6 +12,7 @@
 package list
 
 import (
+	"strconv"
 	"fmt"
 	"github.com/sematext/oxdpus/pkg/blacklist"
 	"github.com/sirupsen/logrus"
@@ -23,12 +24,15 @@ func NewCommand(logger *logrus.Logger) *cobra.Command {
 		Use:   "list",
 		Short: "Shows all IP addresses registered in the blacklist",
 		Run: func(cmd *cobra.Command, args []string) {
-			m, err := blacklist.NewMap()
-			if err != nil {
-				logger.Fatal(err)
-			}
-			for _, ip := range m.List() {
-				fmt.Println(fmt.Sprintf("* %s", ip))
+			for i:=1; i<=31; i++ {
+				blacklist.BlacklistMap = "blacklist" + strconv.Itoa(i)
+				m, err := blacklist.NewMap()
+				if err != nil {
+					logger.Fatal(err)
+				}
+				for _, ip := range m.List() {
+					fmt.Println(fmt.Sprintf("* %s", ip))
+				}
 			}
 		},
 	}

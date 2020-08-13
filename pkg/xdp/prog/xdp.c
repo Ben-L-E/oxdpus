@@ -9,6 +9,16 @@
  *
  */
 
+#ifdef asm_inline
+#undef asm_inline
+#define asm_inline asm
+#endif
+
+#ifdef asm_volatile_goto
+#undef asm_volatile_goto
+#endif
+#define asm_volatile_goto(x...) asm volatile("invalid use of asm_volatile_goto")
+
 #include <linux/bpf.h>
 #include <linux/if_ether.h>
 #include <linux/ip.h>
@@ -76,11 +86,100 @@ int xdp_ip_filter(struct xdp_md *ctx) {
     }
     ip_src = iph->saddr;
 
-    if (bpf_map_lookup_elem(&blacklist, &ip_src)) {
+    if (bpf_map_lookup_elem(&blacklist1, &ip_src)) {
         return XDP_DROP;
     }
-
+    else if (bpf_map_lookup_elem(&blacklist2, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist3, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist4, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist5, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist6, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist7, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist8, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist9, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist10, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist11, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist12, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist13, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist14, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist15, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist16, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist17, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist18, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist19, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist20, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist21, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist22, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist23, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist24, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist25, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist26, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist27, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist28, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist29, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist30, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist31, &ip_src)) {
+        return XDP_DROP;
+    }
     return XDP_PASS;
 }
 
-char __license[] SEC("license") = "GPL";
+char __license[] SEC("license") = "Dual MIT/GPL";

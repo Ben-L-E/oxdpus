@@ -25,6 +25,10 @@ func NewCommand(logger *logrus.Logger) *cobra.Command {
 		Use:   "add",
 		Short: "Appends a new IP address to the blacklist",
 		Run: func(cmd *cobra.Command, args []string) {
+			mapnum, _ := cmd.Flags().GetString("map")
+			if len(mapnum) > 0 {
+    			blacklist.BlacklistMap = "blacklist" + mapnum
+			}
 			ip, _ := cmd.Flags().GetString("ip")
 			m, err := blacklist.NewMap()
 			if err != nil {

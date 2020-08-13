@@ -9,15 +9,15 @@ GOFMT ?= gofmt
 ALL_SRC := $(shell find . -name "*.go" | grep -v -e ".*/\..*" -e ".*/_.*")
 
 
-CFLAGS = -I $(LINUX_HEADERS)/build/arch/x86/include \
-	-I $(LINUX_HEADERS)/build/arch/x86/include/generated/uapi \
-	-I $(LINUX_HEADERS)/build/arch/x86/include/generated \
+CFLAGS = -I $(LINUX_HEADERS)/build/arch/arm64/include \
+	-I $(LINUX_HEADERS)/build/arch/arm64/include/generated/uapi \
+	-I $(LINUX_HEADERS)/build/arch/arm64/include/generated \
 	-I $(LINUX_HEADERS)/build/include \
-	-I $(LINUX_HEADERS)/build/arch/x86/include/uapi \
+	-I $(LINUX_HEADERS)/build/arch/arm64/include/uapi \
 	-I $(LINUX_HEADERS)/build/include/uapi \
 	-include $(LINUX_HEADERS)/build/include/linux/kconfig.h \
 	-I $(LINUX_HEADERS)/build/include/generated/uapi \
-	-D__KERNEL__ -D__ASM_SYSREG_H \
+	-D__KERNEL__ \
 	-Wunused \
 	-Wall \
 	-Wno-compare-distinct-pointer-types \

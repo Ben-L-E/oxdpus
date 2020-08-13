@@ -16,15 +16,13 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	libbpf "github.com/rabbitstack/gobpf/elf"
+	libbpf "github.com/iovisor/gobpf/elf"
 	"github.com/sematext/oxdpus/pkg/xdp"
 	"net"
 	"unsafe"
 )
 
-const (
-	blacklistMap = "blacklist"
-)
+var BlacklistMap string = "blacklist1"
 
 // Map is responsible for controlling the IP addresses that are part of blacklist map.
 type Map struct {
@@ -41,9 +39,9 @@ func NewMap() (*Map, error) {
 	if err := mod.Load(nil); err != nil {
 		return nil, err
 	}
-	m := mod.Map(blacklistMap)
+	m := mod.Map(BlacklistMap)
 	if m == nil {
-		return nil, fmt.Errorf("unable to find %q map in ELF sections", blacklistMap)
+		return nil, fmt.Errorf("unable to find %q map in ELF sections", BlacklistMap)
 	}
 	return &Map{mod: mod, m: m}, nil
 }
