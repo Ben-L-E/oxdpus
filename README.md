@@ -70,7 +70,7 @@ $ oxdpus detach --dev=vethbd33820
 INFO XDP program successfully unloaded from vethbd33820 device
 ```
 
-You can optionally set a blacklist map number. Oxdpus supports up to 31 blacklist maps, each holding up to 65,536 IP addresses for a theoretical total max entries limit of 2,031,616 IP addresses. `oxdpus list` will show an aggregated list but `oxdpus remove` needs the map number if it was set when using `oxdpus add`. In addition, oxdpus will silently drop add requests once the per-map limit of 65,536 is reached (especially common with CIDR ranges) so you'll need to handle that manually. Note: if you get a `too many open files` error, you'll need to adjust/create a higher `nofile` limit in `/etc/security/limits.conf` and reboot. `ulimit -H -a | grep 'open files'` should be `1048576` or higher.
+You can optionally set a blacklist map number. Oxdpus supports up to 31 blacklist maps, each holding up to 65,536 IP addresses for a theoretical total max entries limit of 2,031,616 IP addresses. `oxdpus list` will show an aggregated list but `oxdpus remove` needs the map number if it was set when using `oxdpus add`. In addition, oxdpus will silently drop add requests once the per-map limit of 65,536 is reached (especially common with CIDR ranges) so you'll need to handle that manually. Note: if you get a `too many open files` error, you'll need to adjust/create a higher `nofile` limit in `/etc/security/limits.conf` and reboot. `ulimit -H -n` should be `1048576` or higher.
 
 ```bash
 $ oxdpus add --map=31 --ip=172.17.0.2
