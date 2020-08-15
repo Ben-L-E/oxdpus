@@ -84,13 +84,13 @@ INFO 172.17.0.2 address removed from the blacklist
 **IMPORTANT:** prior to compiling this version of oxdpus, you'll need to increase your `nofile` limit or you'll get a `too many open files` error when running oxdpus. The limit you set will be dependent on your system resources but here's an example:
 
 ```bash
-echo "fs.file-max=4194304" >> /etc/sysctl.conf
-echo "fs.nr_open=4194304" >> /etc/sysctl.conf
-sysctl -p /etc/sysctl.conf
+echo "fs.file-max = 4194304" >> /etc/sysctl.d/local.conf
+echo "fs.nr_open = 4194304" >> /etc/sysctl.d/local.conf
+sysctl -p /etc/sysctl.d/local.conf
 ulimit -n 4194304
 sed -i "s/# End of file//" /etc/security/limits.conf
 printf "\n* - nofile 4194304\nroot - nofile 4194304\n" >> /etc/security/limits.conf
-ulimit -Hn
+printf "\nulimit -n 4194304\n" >> ~/.bashrc
 ```
 
 ## Tutorial
