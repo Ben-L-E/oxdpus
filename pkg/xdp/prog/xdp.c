@@ -179,6 +179,51 @@ int xdp_ip_filter(struct xdp_md *ctx) {
     else if (bpf_map_lookup_elem(&blacklist31, &ip_src)) {
         return XDP_DROP;
     }
+    else if (bpf_map_lookup_elem(&blacklist32, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist33, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist34, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist35, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist36, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist37, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist38, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist39, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist40, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist41, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist42, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist43, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist44, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist45, &ip_src)) {
+        return XDP_DROP;
+    }
+    else if (bpf_map_lookup_elem(&blacklist46, &ip_src)) {
+        return XDP_DROP;
+    }
     return XDP_PASS;
 }
 

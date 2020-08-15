@@ -70,15 +70,26 @@ $ oxdpus detach --dev=vethbd33820
 INFO XDP program successfully unloaded from vethbd33820 device
 ```
 
-You can optionally set a blacklist map number. Oxdpus supports up to 31 blacklist maps, each holding up to 65,536 IP addresses for a theoretical total max entries limit of 2,031,616 IP addresses. `oxdpus list` will show an aggregated list but `oxdpus remove` needs the map number if it was set when using `oxdpus add`. In addition, oxdpus will silently drop add requests once the per-map limit of 65,536 is reached (especially common with CIDR ranges) so you'll need to handle that manually. Note: if you get a `too many open files` error, you'll need to adjust/create a higher `nofile` limit in `/etc/security/limits.conf` and reboot. `ulimit -Hn` should be `1048576` or higher.
+You can optionally set a blacklist map number. This version of oxdpus is slightly slower than the original but supports up to 46 blacklist maps, each holding up to 65,536 IP addresses for a theoretical total max entries limit of 3,014,656 IP addresses. `oxdpus list` will show an aggregated list but `oxdpus remove` needs the map number if it was set when using `oxdpus add`. In addition, oxdpus will silently drop add requests once the per-map limit of 65,536 is reached (especially common with CIDR ranges) so you'll need to handle that manually.
 
 ```bash
-$ oxdpus add --map=31 --ip=172.17.0.2
+$ oxdpus add --ip=172.17.0.2 --map=46
 INFO 172.17.0.2 address added to the blacklist
 $ oxdpus list
 * 172.17.0.2
-$ oxdpus remove --map=31 --ip=172.17.0.2
+$ oxdpus remove --ip=172.17.0.2 --map=46
 INFO 172.17.0.2 address removed from the blacklist
+```
+
+**IMPORTANT:** prior to compiling this version of oxdpus, you'll need to increase your `nofile` limit or you'll get a `too many open files` error when running oxdpus. The limit you set will be dependent on your system resources but here's an example:
+
+```bash
+echo "fs.nr_open=4194304" >> /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
+ulimit -n 4194304
+sed -i "s/# End of file//" /etc/security/limits.conf
+printf "\n* - nofile 4194304\nroot - nofile 4194304\n" >> /etc/security/limits.conf
+ulimit -Hn
 ```
 
 ## Tutorial

@@ -35,6 +35,7 @@ struct bpf_map_def SEC("maps/blacklist1") blacklist1 = {
     .namespace = "globals",
 };
 
+
 struct bpf_map_def SEC("maps/blacklist2") blacklist2 = {
     .type = BPF_MAP_TYPE_HASH,
     .key_size = sizeof(u32),
@@ -297,6 +298,141 @@ struct bpf_map_def SEC("maps/blacklist30") blacklist30 = {
 };
 
 struct bpf_map_def SEC("maps/blacklist31") blacklist31 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist32") blacklist32 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist33") blacklist33 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist34") blacklist34 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist35") blacklist35 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist36") blacklist36 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist37") blacklist37 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist38") blacklist38 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist39") blacklist39 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist40") blacklist40 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist41") blacklist41 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist42") blacklist42 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist43") blacklist43 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist44") blacklist44 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist45") blacklist45 = {
+    .type = BPF_MAP_TYPE_HASH,
+    .key_size = sizeof(u32),
+    .value_size = sizeof(u32),
+    .max_entries = 65535,
+    .pinning = PIN_GLOBAL_NS,
+    .namespace = "globals",
+};
+
+struct bpf_map_def SEC("maps/blacklist46") blacklist46 = {
     .type = BPF_MAP_TYPE_HASH,
     .key_size = sizeof(u32),
     .value_size = sizeof(u32),

@@ -24,7 +24,7 @@ func NewCommand(logger *logrus.Logger) *cobra.Command {
 		Use:   "list",
 		Short: "Shows all IP addresses registered in the blacklist",
 		Run: func(cmd *cobra.Command, args []string) {
-			for i:=1; i<=31; i++ {
+			for i:=1; i<=46; i++ {
 				blacklist.BlacklistMap = "blacklist" + strconv.Itoa(i)
 				m, err := blacklist.NewMap()
 				if err != nil {
